@@ -1,1 +1,12 @@
+{% extends "core/base.html" %}
+
+{% block content %}
 <p>Welcome on the Racing page</p>
+
+<ul>
+{% for course in courses %}
+    <li>{{ course }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

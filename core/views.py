@@ -11,4 +11,9 @@ def about(request):
     return render(request, "core/about.html")
 
 def racingpage(request):
-    return render(request, "core/racing.html")
+    courses = [
+        "Circuit lemans F1 - 200KM",
+        "Circuit de L'Univerwww F4 - 150KM",
+        "Circuit LeChatDuPain F3 - 500KM",
+    ]
+    return render(request, "core/racing.html", {"courses": courses})
