@@ -6,6 +6,7 @@
 <ul>
 {% for course in courses %}
     <li>{{ course }}</li>
+    <img src="{{ course.image }}" alt="{{ course.name }}" width="512">
 {% endfor %}
 </ul>
 
