@@ -7,6 +7,7 @@
 {% for course in courses %}
     <li>{{ course }}</li>
     <img src="{{ course.image }}" alt="{{ course.name }}" width="512">
+    <a href="/racing/{{ course.id }}">Voir la course</a>
 {% endfor %}
 </ul>
 

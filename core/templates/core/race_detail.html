@@ -1,0 +1,10 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<p>Welcome on the Racing page</p>
+
+<h1>{{ race.title }}</h1>
+<p>{{ race.distance }} km à {{ race.location }}</p>
+<img src="{{ race.image }}" alt="{{ race.title }}" width="512">
+
+{% endblock %}
