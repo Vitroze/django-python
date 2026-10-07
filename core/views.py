@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models.race import Race
 
 def index(request):
     nom = request.GET.get("nom", "").strip() or "le monde"
@@ -12,8 +12,8 @@ def about(request):
 
 def racingpage(request):
     courses = [
-        "Circuit lemans F1 - 200KM",
-        "Circuit de L'Univerwww F4 - 150KM",
-        "Circuit LeChatDuPain F3 - 500KM",
+        Race("Circuit lemans F1", 200, "Le Mans", "lemans.jpg"),
+        Race("Circuit de L'Université F4", 150, "Lyon", "universite.jpg"),
+        Race("Circuit LeChatDuPain F3", 500, "Paris", "chatdupain.jpg"),
     ]
     return render(request, "core/racing.html", {"courses": courses})
