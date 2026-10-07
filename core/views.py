@@ -19,5 +19,10 @@ def racingpage(request):
     return render(request, "core/racing.html", {"courses": courses})
 
 def race_detail(request, race_id):
+    if race_id < 1 or race_id > len(courses):
+        return render(request, "core/racing.html", {"courses": courses, "error": "Course non trouvée."})
+
     race = courses[max(0, int(race_id) - 1)]  # Assuming race_id is 1-based index
+    if race is None:
+        return render(request, "core/racing.html", {"courses": courses, "error": "Course non trouvée."})
     return render(request, "core/race_detail.html", {"race": race})
